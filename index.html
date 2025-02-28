@@ -4,25 +4,137 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dev Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-      type="text/css"
     />
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
+    <style>
+      h2 {
+        font-size: 16px;
+      }
+      .custom-gradient {
+        background: linear-gradient(
+          130.7deg,
+          rgb(55, 82, 253) 0.419%,
+          rgb(108, 127, 250) 52.66%,
+          rgb(155, 168, 248) 99.733%
+        );
+      }
+
+      .poppins-font {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .btn-primary {
+        padding: 10px 20px;
+        background-color: #3752fd;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
   </head>
-  <body class="max-w-[1280px] mx-auto">
-    <header class="flex justify-between items-center py-4">
-        <div class="flex">
-            <img src="./assets/logo.png" alt="">
-            <h1>DevBoard</h1>
-        </div>
-        <div class="flex gap-9 items-center">
-            <button class="btn rounded-[32px] text-[32px] font-bold p-4"><img src="./assets/checkbox.png" alt="">23</button>
-            <button class="bg-gray-100 rounded-full p-2"><img src="./assets/theme-btn.png" alt=""></button>
-        </div>
+  <body class="poppins-font mt-5 bg-slate-100 min-h-[100vh]">
+    <header
+      class="max-w-[1536px] bg-white p-6 rounded-2xl mx-auto flex justify-between items-center py-4"
+    >
+      <div class="flex items-center gap-[10px]">
+        <img src="./assets/logo.png" alt="" />
+        <h1 class="text-3xl">Dev<span class="font-bold">Board</span></h1>
+      </div>
+      <div class="flex gap-9 items-center">
+        <button
+          class="flex items-center gap-1.5 bg-[#F4F7FF] rounded-[32px] p-3 text-2xl font-bold"
+        >
+          <img src="./assets/checkbox.png" alt="" />23
+        </button>
+        <button class="bg-gray-100 rounded-full p-2">
+          <img src="./assets/theme-btn.png" alt="" />
+        </button>
+      </div>
     </header>
-    <main></main>
+    <main class="flex justify-between gap-6 max-w-[1536px] mx-auto mt-5">
+      <section class="bg-white">
+        <div
+          class="flex gap-5 rounded-2xl p-6 pb-0 justify-between items-center"
+        >
+          <div
+            class="flex items-center rounded-xl min-w-[263px] bg-slate-100 p-8 pr-5 pb-6 gap-5 h-[128px]"
+          >
+            <div>
+              <img src="./assets/checkbox.png" alt="" />
+            </div>
+            <div class="flex flex-col">
+              <h2 class="text-base">Task Assigned</h2>
+              <h1 class="text-xl font-bold">05</h1>
+            </div>
+          </div>
+          <div
+            class="flex w-full items-center gap-5 pr-20 custom-gradient pl-4 py-6 rounded-xl h-[128px]"
+          >
+            <div>
+              <img src="./assets/board.png" alt="" />
+            </div>
+            <div>
+              <h1 class="text-white text-2xl font-medium leading-9">
+                Discover Something <br />
+                New Today!
+              </h1>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center min-w-[263px] h-[128px] rounded-xl pl-6 py-7 pb-6 bg-slate-100 gap-4"
+          >
+            <div><img src="./assets/calender.png" alt="" /></div>
+            <div>
+              <p>
+                wed, <br />
+                july 28 2025
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- cards  -->
+        <div class="mt-16 px-6 grid gap-6 grid-cols-3">
+          <!-- card 1 -->
+          <div class="bg-slate-100 p-5 pr-3 rounded-2xl">
+            <h3 class="bg-white py-2 px-4 w-fit text-[#00303C] rounded-lg">
+              ShopEase
+            </h3>
+            <h1 class="text-2xl font-medium my-4">Fix Mobile Button Issue</h1>
+            <p class="p-4 bg-white opacity-50 rounded-lg">
+              Debug using Chrome DevTools, check for overlapping elements
+            </p>
+            <div class="flex mt-5 items-center justify-between">
+              <div>
+                <p class="text-[#00303C] text-[14px] leading-5">Deadline</p>
+                <h6 class="text-[16px]">23 march 2025</h6>
+              </div>
+              <button class="btn-primary h-fit hover:bg-blue-200">
+                Complete
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- activity log start  -->
+      <section class="bg-white rounded-2xl p-6 w-[366px]">
+        <div class="flex justify-center">
+          <img src="./assets/activity.png" alt="" />
+          <h1>Activity Log</h1>
+        </div>
+        <button>Clear History</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>
