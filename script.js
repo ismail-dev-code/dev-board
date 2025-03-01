@@ -3,12 +3,13 @@ const currentDate = new Date();
 todayDate.innerText = currentDate.toDateString();
 
 const buttons = document.querySelectorAll(".btn-primary");
+const cardTitle = document.querySelectorAll(".card-title")
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
     const taskAssigned = document.getElementById("task-assign");
     const taskComplete = document.getElementById("task-complete");
-    console.log(buttons[i]);
+    
 
     if (parseInt(taskAssigned.innerText) <= 0) {
       alert("No tasks remaining!");
@@ -40,7 +41,7 @@ for (let i = 0; i < buttons.length; i++) {
     
     newElement.innerHTML = `
     <div class="bg-slate-100 p-3 mb-7 rounded-xl"> 
-        <p> You have Complete The Task at ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()} ${
+        <p> You have Complete The Task ${cardTitle[i].innerText} at ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()} ${
       currentDate.getHours() >= 12 ? "PM" : "AM"
     } </p>
     </div>
