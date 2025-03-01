@@ -56,17 +56,14 @@ document.getElementById("clear-btn").addEventListener("click", function () {
   historyLog.innerText = "";
 });
 
+const bodyId = document.getElementById("body");
 
-const bodyId = document.getElementById('body');
-
-const colors = ["green-500", "tomato-300", "black-50", "yellow-500"];
+const colors = ["bg-green-500", "bg-red-300", "bg-gray-50", "bg-yellow-500"];
+let currentIndex = 0;
 document.getElementById("theme").addEventListener("click", function () {
-    const randomIndex = Math.round(Math.random() *4);
-  
-    
-    bodyId.classList.remove(...colors.map(color => `bg-${color}`));
-  
-   
-    bodyId.classList.add(`bg-${colors[randomIndex]}`);
-  }
-);
+  bodyId.classList.remove(...colors);
+
+  bodyId.classList.add(colors[currentIndex]);
+
+  currentIndex = (currentIndex + 1) % colors.length;
+});
