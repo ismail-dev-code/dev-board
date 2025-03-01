@@ -21,7 +21,6 @@ for (let i = 0; i < buttons.length; i++) {
       taskAssigned.innerText = parseInt(taskAssigned.innerText) - 1;
       taskComplete.innerText = parseInt(taskComplete.innerText) + 1;
 
-      // Disable only the clicked button
       buttons[i].disabled = true;
       buttons[i].classList.add(
         "bg-gray-400",
@@ -40,13 +39,26 @@ for (let i = 0; i < buttons.length; i++) {
 
     newElement.innerHTML = `
     <div class="bg-slate-100 p-3 mb-7 rounded-xl"> 
-        <p> You have Complete The Task ${
+        <p> You have completed the task ${
           cardTitle[i].innerText
-        } at ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()} ${
-      currentDate.getHours() >= 12 ? "PM" : "AM"
-    } </p>
+        } at ${format12HourTime()} </p>
     </div>
-    `;
+`;
+
+    function format12HourTime() {
+      const nowTime = new Date();
+      let hours = nowTime.getHours();
+      let minutes = nowTime.getMinutes();
+      let seconds = nowTime.getSeconds();
+      const amPm = hours >= 12 ? "PM" : "AM";
+
+      hours = hours % 12 || 12;
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      return `${hours}:${minutes}:${seconds} ${amPm}`;
+    }
 
     historyLog.appendChild(newElement);
   });
@@ -58,12 +70,17 @@ document.getElementById("clear-btn").addEventListener("click", function () {
 
 const bodyId = document.getElementById("body");
 
-const colors = ["bg-green-500", "bg-red-300", "bg-gray-50", "bg-yellow-500"];
+const colors = [
+  "bg-green-500",
+  "bg-slate-100",
+  "bg-red-300",
+  "bg-gray-50",
+  "bg-yellow-500",
+];
 let currentIndex = 0;
 document.getElementById("theme").addEventListener("click", function () {
   bodyId.classList.remove(...colors);
+  currentIndex = (currentIndex + 1) % colors.length;
 
   bodyId.classList.add(colors[currentIndex]);
-
-  currentIndex = (currentIndex + 1) % colors.length;
 });
