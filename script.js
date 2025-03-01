@@ -1,0 +1,52 @@
+const todayDate = document.getElementById("date-today");
+const currentDate = new Date();
+todayDate.innerText = currentDate.toDateString();
+
+const buttons = document.querySelectorAll(".btn-primary");
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function () {
+    const taskAssigned = document.getElementById("task-assign");
+    const taskComplete = document.getElementById("task-complete");
+    console.log(buttons[i]);
+
+    if (parseInt(taskAssigned.innerText) <= 0) {
+      alert("No tasks remaining!");
+    } else {
+      alert("Board Updated Successfully!");
+      if (parseInt(taskAssigned.innerText) <= 1) {
+        alert("Congrats!! you have successfully completed the current task");
+      }
+      taskAssigned.innerText = parseInt(taskAssigned.innerText) - 1;
+      taskComplete.innerText = parseInt(taskComplete.innerText) + 1;
+
+      // Disable only the clicked button
+      buttons[i].disabled = true;
+      buttons[i].classList.add(
+        "bg-gray-400",
+        "font-medium",
+        "text-white",
+        "rounded-xl",
+        "py-1.5",
+        "px-4",
+        "text-[16px]",
+        "cursor-not-allowed"
+      );
+      buttons[i].classList.remove("btn-primary");
+    }
+
+    const historyLog = document.getElementById("history");
+    const newElement = document.createElement("div");
+    
+    newElement.innerHTML = `
+    <div class="bg-slate-100 p-3 mb-7 rounded-xl"> 
+        <p> You have Complete The Task at ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()} ${
+      currentDate.getHours() >= 12 ? "PM" : "AM"
+    } </p>
+    </div>
+    `;
+
+    historyLog.appendChild(newElement);
+
+  });
+}
