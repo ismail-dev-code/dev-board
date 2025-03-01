@@ -14,9 +14,8 @@
     <!-- tailwind link  -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    
     <style>
-        .poppins-font {
+      .poppins-font {
         font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -35,38 +34,74 @@
   </head>
   <body class="poppins-font mt-5 bg-slate-100 min-h-[100vh]">
     <header
-      class="max-w-[1536px] bg-white p-6 rounded-2xl flex  justify-between items-center py-4"
+      class="max-w-[1536px] mx-auto bg-white p-6 rounded-2xl flex justify-between items-center py-4"
     >
       <div class="flex gap-[10px]">
-        <img src="./assets/logo.png" alt="" />
+        <img class="cursor-pointer" src="./assets/logo.png" alt="" />
         <h1 class="text-2xl">Dev<span class="font-bold">Board</span></h1>
       </div>
       <div>
         <a href="./index.html" class="btn-primary1 border-none">Back to Desk</a>
       </div>
     </header>
-    <h1 class="text-center text-2xl font-bold">Blogs</h1>
-    <main>
-<div class="bg-white mt-5 p-4">
-    <h1 class="font-bold border-b-2 p-2">Question-1: What are the different ways to select an element in the DOM?</h1>
-    <p><span class="font-bold">Answer:</span> We can select an element by multiple ways, such as getElementById(), querySelectorAll(), getElementsByClassName(), querySelector() etc.</p>
-</div>
-<div class="bg-white mt-5 p-4">
-    <h1 class="font-bold border-b-2 p-2">Question-2: What is the difference between innerHTML, innerText, and textContent ?</h1>
-    <p><span class="font-bold">Answer:</span> innerHTML  stands for HTML content inside an element, including HTML tags. innerText stands for sets the visible text inside an element and textContent  sets the text content inside an element, including hidden elements.</p>
-</div>
-<div class="bg-white mt-5 p-4">
-    <h1 class="font-bold border-b-2 p-2">Question-3: What is event delegation in the DOM?</h1>
-    <p><span class="font-bold">Answer:</span> Event Delegation is a technique in JS where a single parent element handles events for multiple child elements using event bubbling.</p>
-</div>
-<div class="bg-white mt-5 p-4">
-    <h1 class="font-bold border-b-2 p-2">Question-4: What is event bubbling in the DOM?</h1>
-    <p><span class="font-bold">Answer:</span> Event bubbling is a system in the DOM where an event starts from the target element and propagates up to its parent elements.</p>
-</div>
-<div class="bg-white mt-5 p-4">
-    <h1 class="font-bold border-b-2 p-2">Question-5: How do you create, add, and remove elements using JavaScript?</h1>
-    <p><span class="font-bold">Answer:</span> We can dynamically create, add, and remove elements using the DOM such as: for creating element we can use:  document.createElement(), for add elements we can use, appendChild(), append() etc. for remove elements we can use, removeChild() or remove(). </p>
-</div>
+    <h1 class="text-center text-2xl font-bold mt-4">Blogs</h1>
+    <main class="max-w-[1536px] mx-auto mb-8">
+      <div class="bg-white mt-5 p-5 rounded-lg">
+        <h1 class="font-bold border-b-2 p-2">
+          Question-1: What are the different ways to select an element in the
+          DOM?
+        </h1>
+        <p>
+          <span class="font-bold">Answer:</span> We can select an element by
+          multiple ways, such as getElementById(), querySelectorAll(),
+          getElementsByClassName(), querySelector() etc.
+        </p>
+      </div>
+      <div class="bg-white mt-5 p-5 rounded-lg">
+        <h1 class="font-bold border-b-2 p-2">
+          Question-2: What is the difference between innerHTML, innerText, and
+          textContent ?
+        </h1>
+        <p>
+          <span class="font-bold">Answer:</span> innerHTML stands for HTML
+          content inside an element, including HTML tags. innerText stands for
+          sets the visible text inside an element and textContent sets the text
+          content inside an element, including hidden elements.
+        </p>
+      </div>
+      <div class="bg-white mt-5 p-5 rounded-lg">
+        <h1 class="font-bold border-b-2 p-2">
+          Question-3: What is event delegation in the DOM?
+        </h1>
+        <p>
+          <span class="font-bold">Answer:</span> Event Delegation is a technique
+          in JS where a single parent element handles events for multiple child
+          elements using event bubbling.
+        </p>
+      </div>
+      <div class="bg-white mt-5 p-5 rounded-lg">
+        <h1 class="font-bold border-b-2 p-2">
+          Question-4: What is event bubbling in the DOM?
+        </h1>
+        <p>
+          <span class="font-bold">Answer:</span> Event bubbling is a system in
+          the DOM where an event starts from the target element and propagates
+          up to its parent elements.
+        </p>
+      </div>
+      <div class="bg-white mt-5 p-5 rounded-lg">
+        <h1 class="font-bold border-b-2 p-2">
+          Question-5: How do you create, add, and remove elements using
+          JavaScript?
+        </h1>
+        <p>
+          <span class="font-bold">Answer:</span> We can dynamically create, add,
+          and remove elements using the DOM such as: for creating element we can
+          use: document.createElement(), for add elements we can use,
+          appendChild(), append() etc. for remove elements we can use,
+          removeChild() or remove().
+        </p>
+      </div>
     </main>
   </body>
 </html>
