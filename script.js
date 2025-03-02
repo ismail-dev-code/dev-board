@@ -51,12 +51,7 @@ for (let i = 0; i < buttons.length; i++) {
       let minutes = nowTime.getMinutes();
       let seconds = nowTime.getSeconds();
       const amPm = hours >= 12 ? "PM" : "AM";
-
       hours = hours % 12 || 12;
-
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
       return `${hours}:${minutes}:${seconds} ${amPm}`;
     }
 
@@ -72,10 +67,19 @@ const bodyId = document.getElementById("body");
 
 const colors = [
   "bg-green-500",
-  "bg-slate-100",
-  "bg-red-300",
-  "bg-gray-50",
   "bg-yellow-500",
+  "bg-yellow-500",
+  "bg-slate-100",
+  "bg-purple-500",
+  "bg-pink-500",
+  "bg-orange-500",
+  "bg-teal-500",
+  "bg-cyan-500",
+  "bg-indigo-500",
+  "bg-lime-500",
+  "bg-violet-500",
+  "bg-teal-200",
+  "bg-cyan-200",
 ];
 let currentIndex = 0;
 document.getElementById("theme").addEventListener("click", function () {
