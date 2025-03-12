@@ -88,3 +88,5 @@ document.getElementById("theme").addEventListener("click", function () {
 
   bodyId.classList.add(colors[currentIndex]);
 });
+
+document.getElementById('year').textContent = new Date().getFullYear();
